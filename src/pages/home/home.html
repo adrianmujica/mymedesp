@@ -1,7 +1,7 @@
 <ion-header>  
   <ion-navbar>
     <ion-title>
-      mymedesp 🎉
+        👨‍🍳👩‍🍳 mymedesp 🎉
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="addRecipe()">
@@ -11,12 +11,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="home" *mobxAutorun>  
+<ion-content class="card-background-page" *mobxAutorun>  
   <ion-item-group>
     <ion-item-divider color="light">My recipes</ion-item-divider>
-    <button ion-item *ngFor="let recipe of store.recipes">
+    <!-- <button ion-item *ngFor="let recipe of store.recipes">
         <div>{{ recipe.name }}</div>
         <div item-end>ok</div>
-    </button>
+    </button> -->
+
+        
+          <ion-card *ngFor="let recipe of store.recipes">
+            <img src="assets/imgs/default_recipe.jpg"/>
+            <div class="card-title">{{recipe.name}}</div>
+            <div class="card-subtitle">{{recipe.description}}</div>
+            
+          </ion-card>
+
   </ion-item-group>
 </ion-content>  
