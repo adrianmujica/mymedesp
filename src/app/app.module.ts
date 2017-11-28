@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { NewRecipePage } from '../pages/new-recipe/new-recipe';
+
 
 import { MobxAngularModule } from 'mobx-angular';  
 import { RecipeStore } from '../stores/recipe.store';
@@ -13,7 +15,8 @@ import { RecipeStore } from '../stores/recipe.store';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    NewRecipePage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { RecipeStore } from '../stores/recipe.store';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    NewRecipePage
   ],
   providers: [
     StatusBar,

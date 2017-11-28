@@ -1,8 +1,9 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 
 import { Recipe } from '../../models/recipe';
 import {RecipeStore } from '../../stores/recipe.store';
+import { NewRecipePage } from '../new-recipe/new-recipe';
 
 @Component({
   selector: 'page-home',
@@ -11,15 +12,15 @@ import {RecipeStore } from '../../stores/recipe.store';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public store: RecipeStore) {
+  constructor(public navCtrl: NavController, 
+    public modalCtrl: ModalController,
+    public store: RecipeStore) {
 
   }
 
   addRecipe(){
-    let recipe = new Recipe();
-    recipe.name = "receta1";
-    recipe.description = "QWERTY";
-    this.store.addRecipe(recipe);
+    let modal = this.modalCtrl.create(NewRecipePage);
+    modal.present();
   }
 
 }

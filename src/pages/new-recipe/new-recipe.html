@@ -1,0 +1,19 @@
+<ion-header>  
+  <ion-navbar>
+    <ion-title>New recipe</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="details">  
+  <ion-list inset>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input text-right type="text" [(ngModel)]="recipe.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input text-right type="text" [(ngModel)]="recipe.description"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="save()">Save</button>
+</ion-content>  
