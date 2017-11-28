@@ -1,14 +1,22 @@
-<ion-header>
+<ion-header>  
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      mymedesp 🎉
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addRecipe()">
+          <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-content class="home" *mobxAutorun>  
+  <ion-item-group>
+    <ion-item-divider color="light">My recipes</ion-item-divider>
+    <button ion-item *ngFor="let recipe of store.recipes">
+        <div>{{ recipe.name }}</div>
+        <div item-end>ok</div>
+    </button>
+  </ion-item-group>
+</ion-content>  
