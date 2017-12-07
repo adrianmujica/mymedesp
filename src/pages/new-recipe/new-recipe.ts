@@ -20,7 +20,6 @@ export class NewRecipePage {
   }
 
   ionViewDidLoad() {
-    console.log(this.recipe.name === undefined || this.recipe.name.trim().length === 0);
   }
 
   save() {

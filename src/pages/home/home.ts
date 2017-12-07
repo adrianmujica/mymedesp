@@ -4,6 +4,7 @@ import { NavController, ModalController } from 'ionic-angular';
 import { Recipe } from '../../models/recipe';
 import {RecipeStore } from '../../stores/recipe.store';
 import { NewRecipePage } from '../new-recipe/new-recipe';
+import { RecipeDetailsPage } from '../recipe-details/recipe-details';
 
 @Component({
   selector: 'page-home',
@@ -21,6 +22,10 @@ export class HomePage {
   addRecipe(){
     let modal = this.modalCtrl.create(NewRecipePage);
     modal.present();
+  }
+
+  recipeDetails(recipe){
+    this.navCtrl.push(RecipeDetailsPage, {recipe: recipe});
   }
 
 }

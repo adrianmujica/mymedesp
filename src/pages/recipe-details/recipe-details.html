@@ -7,12 +7,76 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>recipe-details</ion-title>
+    <ion-title>{{recipe.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-card>
+        
+          <img src="assets/imgs/default_recipe.jpg">
+          <ion-fab right top>
+            <button ion-fab mini>
+              <ion-icon name="md-share"></ion-icon>
+            </button>
+          </ion-fab>
+        
+          <!-- <ion-item>
+            <ion-icon name="football" item-start large></ion-icon>
+            <h2>Museum of Football</h2>
+            <p>11 N. Way St, Madison, WI 53703</p>
+          </ion-item>
+        
+          <ion-item>
+            <ion-icon name="wine" item-left large ></ion-icon>
+            <h2>Institute of Fine Cocktails</h2>
+            <p>14 S. Hop Avenue, Madison, WI 53703</p>
+          </ion-item>
+        
+          <ion-item>
+            <span item-left>18 min</span>
+            <span item-left>(2.6 mi)</span>
+            <button ion-button icon-left clear item-end>
+              <ion-icon name="navigate"></ion-icon>
+              Start
+            </button>
+          </ion-item> -->
+          <ion-card-content>
+            {{recipe.description}}
+          </ion-card-content>
+        
+        </ion-card>
+
+        <div>
+          <h3>Ingredients:</h3>
+
+          <ion-list>
+              <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/pepper.jpg">
+                </ion-avatar>
+                <h2>Pimiento amarillo</h2>
+                <p>Cantidad: 2</p>
+              </ion-item>
+              <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/pepper.jpg">
+                </ion-avatar>
+                <h2>Pimiento amarillo</h2>
+                <p>Cantidad: 2</p>
+              </ion-item>
+              <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/pepper.jpg">
+                </ion-avatar>
+                <h2>Pimiento amarillo</h2>
+                <p>Cantidad: 2</p>
+              </ion-item>
+            </ion-list>
+
+        </div>
 
 </ion-content>
