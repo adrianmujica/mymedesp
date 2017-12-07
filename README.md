@@ -1,2 +1,2 @@
 # mymedesp
-Front end developer using Ionic and mobx
+Front end development using Ionic and mobx
