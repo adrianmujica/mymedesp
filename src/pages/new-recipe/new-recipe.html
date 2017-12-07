@@ -17,7 +17,7 @@
     </ion-item>
     <ion-item>
       <ion-label>Description</ion-label>
-      <ion-input text-right type="text" [(ngModel)]="recipe.description"></ion-input>
+      <ion-textarea text-right [(ngModel)]="recipe.description"></ion-textarea>
     </ion-item>
   </ion-list>
   <button ion-button block [disabled]="(recipe.name === undefined || recipe.name.trim().length === 0)" (click)="save()">Save</button>
