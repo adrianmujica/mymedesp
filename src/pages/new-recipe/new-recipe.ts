@@ -12,6 +12,7 @@ import { RecipeStore } from '../../stores/recipe.store';
 export class NewRecipePage {
 
   public recipe = new Recipe();
+  public newRecipe: boolean;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
@@ -20,11 +21,15 @@ export class NewRecipePage {
   }
 
   ionViewDidLoad() {
+    this.newRecipe = this.navParams.get("newRecipe");
+    this.recipe = (this.newRecipe) ? new Recipe() : this.navParams.get("recipe");
   }
 
   save() {
-    this.store.addRecipe(this.recipe);
-    console.log(this.recipe.name);
+    if(this.newRecipe)
+      this.store.addRecipe(this.recipe);
+    else
+      this.store.updateRecipe(this.recipe);
     this.dismiss();
   }
 

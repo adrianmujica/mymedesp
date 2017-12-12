@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { Recipe } from '../../models/recipe';
+import { NewRecipePage } from '../new-recipe/new-recipe';
+import { RecipeStore } from '../../stores/recipe.store';
 
 /**
  * Generated class for the RecipeDetailsPage page.
@@ -18,7 +20,11 @@ export class RecipeDetailsPage {
 
   recipe: Recipe;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public modalCtrl: ModalController,
+    public alertCtrl: AlertController,
+    public recipeStore: RecipeStore) {
   }
 
   ngOnInit(){
@@ -28,6 +34,37 @@ export class RecipeDetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecipeDetailsPage');
+  }
+
+  edit(){
+    let modal = this.modalCtrl.create(NewRecipePage, {newRecipe: false, recipe: this.recipe});
+    modal.present();
+  }
+
+  delete(){
+   this.recipeStore.deleteRecipe(this.recipe);
+   this.navCtrl.pop(); 
+  }
+
+  showConfirm() {
+    let confirm = this.alertCtrl.create({
+      title: 'Delete recipe?',
+      message: `Do you want to remove: ${this.recipe.name} ?`,
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+          }
+        },
+        {
+          text: 'Confirm',
+          handler: () => {
+            this.delete();
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }

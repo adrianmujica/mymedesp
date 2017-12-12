@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>New recipe</ion-title>
     <ion-buttons end>
-        <button ion-button (click)="dismiss()">
+        <button ion-button (click)="dismiss()" large>
             <ion-icon name="close"></ion-icon>
         </button>
     </ion-buttons>
@@ -17,7 +17,7 @@
     </ion-item>
     <ion-item>
       <ion-label>Description</ion-label>
-      <ion-textarea text-right [(ngModel)]="recipe.description"></ion-textarea>
+      <ion-textarea [(ngModel)]="recipe.description"></ion-textarea>
     </ion-item>
   </ion-list>
   <button ion-button block [disabled]="(recipe.name === undefined || recipe.name.trim().length === 0)" (click)="save()">Save</button>

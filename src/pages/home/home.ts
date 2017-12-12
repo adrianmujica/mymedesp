@@ -20,7 +20,7 @@ export class HomePage {
   }
 
   addRecipe(){
-    let modal = this.modalCtrl.create(NewRecipePage);
+    let modal = this.modalCtrl.create(NewRecipePage, {newRecipe: true});
     modal.present();
   }
 
