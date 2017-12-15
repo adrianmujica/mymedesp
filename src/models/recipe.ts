@@ -5,6 +5,8 @@ export class Recipe {
     @observable name: string;
     @observable description: string;
 
-    constructor() { }
+    constructor() { 
+    }
+
 
 }

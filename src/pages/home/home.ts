@@ -16,6 +16,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, 
     public modalCtrl: ModalController,
     public store: RecipeStore) {
+      console.log("recipes: ", this.store.recipes.length);
 
   }
 

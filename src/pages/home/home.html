@@ -18,13 +18,12 @@
         <div>{{ recipe.name }}</div>
         <div item-end>ok</div>
     </button> -->
-
+          <h2 *ngIf="store.recipes.length == 0">No recipes yet</h2>
         
           <ion-card *ngFor="let recipe of store.recipes" (click)="recipeDetails(recipe)">
             <img src="assets/imgs/default_recipe.jpg"/>
             <div class="card-title">{{recipe.name}}</div>
-            <div class="card-subtitle">{{recipe.description}}</div>
-            
+            <div class="card-subtitle">{{recipe.description}}</div>         
           </ion-card>
 
   </ion-item-group>

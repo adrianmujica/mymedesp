@@ -1,6 +1,6 @@
 <ion-header>  
   <ion-navbar>
-    <ion-title>New recipe</ion-title>
+    <ion-title>{{title}}</ion-title>
     <ion-buttons end>
         <button ion-button (click)="dismiss()" large>
             <ion-icon name="close"></ion-icon>
@@ -10,15 +10,30 @@
 </ion-header>
 
 <ion-content padding class="details">  
-  <ion-list inset>
-    <ion-item>
-      <ion-label>Name</ion-label>
-      <ion-input text-right type="text" [(ngModel)]="recipe.name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Description</ion-label>
-      <ion-textarea [(ngModel)]="recipe.description"></ion-textarea>
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        
+          <ion-avatar item-start>
+            <img src="assets/imgs/default_recipe.jpg">
+          </ion-avatar>
+       
+      </ion-col>
+      <ion-col col-8>
+        <ion-item>
+          <ion-label>Name</ion-label>
+          <ion-input text-right type="text" [(ngModel)]="recipe.name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <ion-item>
+            <ion-label>Description</ion-label>
+            <ion-textarea rows="5" [(ngModel)]="recipe.description"></ion-textarea>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <button ion-button block [disabled]="(recipe.name === undefined || recipe.name.trim().length === 0)" (click)="save()">Save</button>
 </ion-content>  
